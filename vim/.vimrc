@@ -4,6 +4,8 @@ execute pathogen#infect()
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 
+colo codeschool   " Set the colorscheme
+
 :set nocompatible " Disable vi compatability
 :set expandtab    " Spaces to tabs
 :set tabstop=2    " Number of  spaces per tab
@@ -16,6 +18,7 @@ filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 :set autoindent   " Auto-indent new lines
 :set smartindent  " Auto-indent at beginning of lines
 :set smarttab     " Get backspaces to work with tab-spaces
+:set mouse=a
 :set backspace=indent,eol,start
 
 autocmd BufWritePre * :%s/\s\+$//e " Strip trailing whitespace
@@ -27,38 +30,34 @@ highlight LineNr ctermfg=darkgrey ctermbg=NONE " Dark grey line numbers
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" autocmd VimEnter * NERDTree " Autostart NERDTree
-" autocmd VimEnter * wincmd p " Focus on the file instead of NERDTree
+" :nt as a shortcut for opening NERDTree
+map :nt <Esc>:NERDTree<CR>
 
 " Close NERDTree if it is the last and only buffer
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Set the status line at the bottom
-set statusline=%t                        " Tail of the filename
-set statusline+=%{fugitive#statusline()} " git status
+:set laststatus=2
 
-" ctrl-I - next tab
+" ctrl-l - next tab
 " ctrl-h - previous tab
-" ctrl-n - new tab (conflcits with multiple-cursors)
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
-" map  <C-n> :tabnew<CR>
 
-" t as an abbreviation for tabnew
+" :t as an abbreviation for :tabnew
 ca t tabnew
 
-" Use ack as an alias for Ack
+" :ack as an alias for :Ack
 cnoreabbrev ack Ack
 
 " Open symbol in a new tab with ctrl-\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-" :tb as a shortcut for :tab ball
-" Opens all buffers in tabs
+" :tb as a shortcut for :tab ball (Opens all buffers in tabs)
 map :tb <Esc>:tab ball<CR>
-
-" :nt as a shortcut for opening NERDTree
-map :nt <Esc>:NERDTree<CR>
 
 " :bo as a shortcut cfor closing all buffers but this one
 map :bo <Esc>:BufOnly<CR>
+
+" Shift-Tab to de-indent current line
+imap <S-Tab> <C-o><<
