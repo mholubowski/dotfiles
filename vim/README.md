@@ -2,7 +2,7 @@ These are the configuration files and plugins that I use for vim, and tend to ca
 
 ## Plugins
 Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?script_id=2332).
-* [ack.vim](https://github.com/mileszs/ack.vim) - code search
+* [ack.vim](https://github.com/mileszs/ack.vim) - code search (requires [Ack](http://beyondgrep.com/))
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) - multiple cursors, a la Sublime Text
 * [CtrlP](https://github.com/kien/ctrlp.vim) - Fuzzy file search
 * [vim-endwise](https://github.com/tpope/vim-endwise) - add 'end' automatically for Ruby blocks
