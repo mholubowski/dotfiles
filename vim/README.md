@@ -12,5 +12,6 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * [AutoClose.vim](http://www.vim.org/scripts/script.php?script_id=1849) - Auto-complete braces, parens, etc
 * [vim-airline](https://github.com/bling/vim-airline) - Lean & mean status line
 * [BufOnly.vim](http://www.vim.org/scripts/script.php?script_id=1071) - Unload all buffers but current one
+* [zencoding-vim](https://github.com/mattn/zencoding-vim) - HTML snippet expansion
 * [vim-coffeescript](https://github.com/kchmck/vim-coffee-script) - Highlighting for CoffeeScript
 * [vim-jst](https://github.com/briancollins/vim-jst) - Highlighting for JST
