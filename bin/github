@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+`git ls-files >& /dev/null`
+$?.exitstatus == 0 or raise "Not in git repository"
+
+origin = `git config remote.origin.url`
+if origin.start_with? "git"
+  # git@github.com:username/repo.git
+  url = origin.split(':').last.gsub('.git', '')
+  `open https://github.com/#{url}`
+else
+  # https://github.com/username/repo.git
+  url = origin.gsub('.git', '')
+  `open #{url}`
+end
+

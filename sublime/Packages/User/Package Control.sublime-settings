@@ -1,0 +1,15 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"Emmet",
+		"Git",
+		"LESS",
+		"Package Control",
+		"RubyTest",
+		"Rust",
+		"SCSS",
+		"Stylus"
+	]
+}

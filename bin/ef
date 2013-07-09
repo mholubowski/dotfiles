@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+# ef - 'Edit file' (in Vim)
+# Edits a file from a list of modified files in git
+# Ex: given a status such as:
+#
+# Changes not staged for commit:
+#
+# 1) modified:   app/models/follow.rb
+# 2) modified:   config/sunspot.yml
+#
+# You can edit a file using a number, ex: `ef 1` or `ef 2` respectively
+# Defaults to opening the first file in the list
+
+files = `git status --porcelain`.split("\n").map { |line| line[3..line.length] }
+
+idx = ARGV[0].nil? ? 1 : ARGV[0].to_i
+
+# 1-based index
+exec  "vim #{files[idx - 1]}"
+
