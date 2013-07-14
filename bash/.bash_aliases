@@ -256,7 +256,6 @@ alias pushall='git push; hpush'
 # ---------------------
 alias be='bundle exec'
 alias rake='be rake'
-alias rails='be rails'
 alias z='zeus'
 alias zrake='zeus rake'
 alias zc='zeus console'
