@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# ef - 'Edit file' (in Vim)
+# ef - 'Edit file'
 # Edits a file from a list of modified files in git
 # Ex: given a status such as:
 #
@@ -9,13 +9,20 @@
 # 1) modified:   app/models/follow.rb
 # 2) modified:   config/sunspot.yml
 #
-# You can edit a file using a number, ex: `ef 1` or `ef 2` respectively
-# Defaults to opening the first file in the list
+# You can edit files using `ef 1` or `ef 2` respectively
+# Defaults to the first file
 
 files = `git status --porcelain`.split("\n").map { |line| line[3..line.length] }
+selected = []
 
-idx = ARGV[0].nil? ? 1 : ARGV[0].to_i
+if ARGV.empty?
+  selected = files[0]
+else
+  ARGV.each do |idx|
+    selected << files[idx.to_i - 1] # 1-based index
+  end
+  selected = selected.join(' ')
+end
 
-# 1-based index
-exec  "vim #{files[idx - 1]}"
+exec  "vim #{selected}"
 
