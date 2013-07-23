@@ -33,6 +33,9 @@ let g:ctrlp_cmd = 'CtrlP'
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
+" :nf as a shortcut for revealing current file in NERDTree
+map :nf <Esc>:NERDTreeFind<CR>
+
 " Close NERDTree if it is the last and only buffer
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -46,6 +49,9 @@ map  <C-h> :tabp<CR>
 
 " :t as an abbreviation for :tabnew
 ca t tabnew
+
+" :tabu as an abbreviation for :Tabularize
+ca tabu Tabularize
 
 " :ack as an alias for :Ack
 cnoreabbrev ack Ack
@@ -61,3 +67,7 @@ map :bo <Esc>:BufOnly<CR>
 
 " Shift-Tab to de-indent current line
 imap <S-Tab> <C-o><<
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
