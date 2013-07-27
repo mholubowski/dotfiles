@@ -53,8 +53,9 @@ ca t tabnew
 " :tabu as an abbreviation for :Tabularize
 ca tabu Tabularize
 
-" :ack as an alias for :Ack
-cnoreabbrev ack Ack
+" :ack as an alias for :Ack!
+cnoreabbrev ack Ack!
+cnoreabbrev Ack Ack!
 
 " Open symbol in a new tab with ctrl-\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
