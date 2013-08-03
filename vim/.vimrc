@@ -4,8 +4,6 @@ execute pathogen#infect()
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 
-colo codeschool   " Set the colorscheme
-
 :set nocompatible " Disable vi compatability
 :set expandtab    " Spaces to tabs
 :set tabstop=2    " Number of  spaces per tab
@@ -21,9 +19,10 @@ colo codeschool   " Set the colorscheme
 :set mouse=a
 :set backspace=indent,eol,start
 
-autocmd BufWritePre * :%s/\s\+$//e " Strip trailing whitespace
+" Strip trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
-highlight clear SignColumn " Remove background highlighting for gutter
+"highlight clear SignColumn " Remove background highlighting for gutter
 highlight LineNr ctermfg=darkgrey ctermbg=NONE " Dark grey line numbers
 
 " Start CtrlP with ctrl-p
@@ -39,7 +38,7 @@ map :nf <Esc>:NERDTreeFind<CR>
 " Close NERDTree if it is the last and only buffer
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Set the status line at the bottom
+" Show the status line at the bottom
 :set laststatus=2
 
 " ctrl-l - next tab
@@ -66,8 +65,12 @@ map :tb <Esc>:tab ball<CR>
 " :bo as a shortcut cfor closing all buffers but this one
 map :bo <Esc>:BufOnly<CR>
 
-" Shift-Tab to de-indent current line
+" Shift-Tab to de-indent current line (insert mode)
 imap <S-Tab> <C-o><<
+
+" Alias :cc and :cu to \cc and \cu respsectively
+map :cc <Leader>cc
+map :cu <Leader>cu
 
 " Open new split panes to right and bottom
 set splitbelow
