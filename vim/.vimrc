@@ -52,9 +52,13 @@ ca t tabnew
 " :tabu as an abbreviation for :Tabularize
 ca tabu Tabularize
 
-" :ack as an alias for :Ack!
-cnoreabbrev ack Ack!
-cnoreabbrev Ack Ack!
+" :ack as an alias for :Ack! -Q
+" Avoids opening first match in buffer, and escapes literal strings
+cnoreabbrev ack Ack! -Q
+cnoreabbrev Ack Ack! -Q
+
+" :tabue to align by equal signs
+cnoreabbrev tabue Tabularize /=
 
 " Open symbol in a new tab with ctrl-\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -75,3 +79,8 @@ map :cu <Leader>cu
 " Open new split panes to right and bottom
 set splitbelow
 set splitright
+
+" vim-rspec mappings
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>"
