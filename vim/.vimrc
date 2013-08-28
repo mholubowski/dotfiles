@@ -72,6 +72,12 @@ map :bo <Esc>:BufOnly<CR>
 " Shift-Tab to de-indent current line (insert mode)
 imap <S-Tab> <C-o><<
 
+" d2s to convert double quotes to single quotes on current line
+map :d2s :s/"/'/g<CR>
+
+" s2d to convert single quotes to double quotes on current line
+map :s2d :s/'/"/g<CR>
+
 " Alias :cc and :cu to \cc and \cu respsectively
 map :cc <Leader>cc
 map :cu <Leader>cu
