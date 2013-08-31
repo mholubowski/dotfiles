@@ -64,7 +64,7 @@ cnoreabbrev tabue Tabularize /=
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " :tb as a shortcut for :tab ball (Opens all buffers in tabs)
-map :tb <Esc>:tab ball<CR>
+map :tb :tab ball<CR>
 
 " :bo as a shortcut cfor closing all buffers but this one
 map :bo <Esc>:BufOnly<CR>
