@@ -46,6 +46,10 @@ map :nf <Esc>:NERDTreeFind<CR>
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 
+" coloc /nocoloc to toggle color column
+map :coloc :set colorcolumn=80<CR>
+map :nocoloc :set colorcolumn=<CR>
+
 " :t as an abbreviation for :tabnew
 ca t tabnew
 
@@ -77,6 +81,10 @@ map :d2s :s/"/'/g<CR>
 
 " s2d to convert single quotes to double quotes on current line
 map :s2d :s/'/"/g<CR>
+
+" :mouseon and :mouseoff and enabling mouse support
+map :mouseon :set mouse=a<CR>
+map :mouseoff :set mouse=<CR>
 
 " Alias :cc and :cu to \cc and \cu respsectively
 map :cc <Leader>cc
