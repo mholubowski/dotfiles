@@ -159,103 +159,13 @@ alias up.='up'
 alias up..='cd ../../'
 alias up...='cd ../../../'
 alias up....='cd ../../../../'
-
-
-# Git aliases
-# ---------------------
-alias s='git status'
-
-# Run git status if in git repo, else ls -la
-function cs {
-  clear
-  if ! git ls-files >& /dev/null
-  then
-    ls -la
-  else
-    git status
-  fi
-}
-
-# Show diff of last commit
-function glc {
-   sha=`git rev-parse --short HEAD`
-   git show --oneline "$sha"
-}
-
-alias ga='git add'
-alias co='git checkout'
-
-
-#== Branches
-alias master='co master'
-alias mm='git merge master'
-alias branch='git branch'
-alias br='branch'
-alias amend='git commit --amend'
-alias merged='br --merged'
-alias nomerged='br --no-merged'
-
-#== Which branches have been merged?
-function mstat {
-  echo "Merged:"
-  merged
-  echo "Not merged:"
-  nomerged
-}
-alias ms='mstat'
-
-alias report='c;ms;s'
-alias r='report'
-
-#== Diffs
-alias gd='git diff'
-alias gds='gd --staged'
-alias gdw='gd --color-words'
-
-#== Stashing
-alias gss='git stash save'
-alias gsl='git stash list'
-alias gsp='git stash pop'
-alias uns='git unstage'
-
-# Show diff for a numbered git stash
-# Ex: gssp 3
-function gssp {
-  git stash show -p stash@{"$1"}
-}
-
-#== Logging
-alias gl='git log'
-
-# Shortlog of last commits (default 10)
-# Ex: glo -5
-function glo {
-  if [ -z "$1" ]
-  then
-    git log --oneline -10
-  else
-    git log --oneline $1
-  fi
-}
-alias glgg='git log --graph --decorate'
-alias glg='git log --graph --decorate --oneline'
-
-
-# App-specific git stuff
-# ---------------------
-alias creds='co creds'
-function hpush {
-  creds
-  git push heroku creds:master
-  growlnotify -m "Deploy completed"
-}
-alias pushall='git push; hpush'
-
+alias up.....='cd ../../../../../'
 
 # Rails-y shortcuts
 # ---------------------
 alias be='bundle exec'
 alias rake='be rake'
+alias cons='c;be rails console'
 alias z='zeus'
 alias zrake='zeus rake'
 alias zc='zeus console'
