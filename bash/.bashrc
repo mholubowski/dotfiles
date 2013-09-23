@@ -68,6 +68,7 @@ PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 #PS1="$green\]\u:\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
 PS1="$green\]\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
 
+
 # Load RVM into a shell session *as a function*
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
   # First try to load from a user install
@@ -91,6 +92,10 @@ source ~/.git-completion.sh 2>/dev/null
 # Split out alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.git_aliases ]; then
+    . ~/.git_aliases
 fi
 
 # Private aliases, can't touch this
