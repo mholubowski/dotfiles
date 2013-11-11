@@ -73,7 +73,7 @@ PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 # PS1="$green\]\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
 
 # Cyan remote prompt
-PS1="$cyan\"\w/\[$magenta\]\$git_branch\]\[$normal\] $ ""
+PS1="$cyan\"\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
 
 
 # Load RVM into a shell session *as a function*
