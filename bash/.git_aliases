@@ -24,22 +24,17 @@ alias co='git checkout'
 #== Branches
 alias master='co master'
 alias mm='git merge master'
-alias branch='git branch'
-alias br='branch'
 alias amend='git commit --amend'
-alias merged='br --merged'
-alias nomerged='br --no-merged'
 
 #== Which branches have been merged?
 function mstat {
   echo "Merged:"
-  merged
+  git branch --merged
   echo "Not merged:"
-  nomerged
+  git branch --no-merged
 }
-alias ms='mstat'
 
-alias report='c;ms;s'
+alias report='c; mstat; s'
 alias r='report'
 
 #== Diffs
@@ -72,16 +67,6 @@ function glo {
     git log --oneline $1
   fi
 }
+
 alias glgg='git log --graph --decorate'
 alias glg='git log --graph --decorate --oneline'
-
-
-# App-specific git stuff
-# ---------------------
-alias creds='co creds'
-function hpush {
-  creds
-  git push heroku creds:master
-  growlnotify -m "Deploy completed"
-}
-alias pushall='git push; hpush'

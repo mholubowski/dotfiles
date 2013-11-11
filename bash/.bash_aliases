@@ -1,5 +1,3 @@
-# Utility functions
-# ---------------------
 export GREP_OPTIONS='-i --color=always'
 
 # 'Find file'. Shows matching files paths within the current directory
@@ -83,13 +81,6 @@ function dir {
   fi
 }
 
-# Generate a .rvmrc file for a project
-# Ex: rvmgen projectName
-function rvmgen {
-  echo "Creating .rvrc with gemset $1"
-  echo "rvm use 1.9.3@$1 --create" > .rvmrc
-}
-
 # Force remove a file or directory, with confirmation
 # Ex: rc file.txt junkDirectory/
 # => Are you sure you want to remove file.txt?
@@ -167,10 +158,6 @@ alias up.....='cd ../../../../../'
 alias be='bundle exec'
 alias rake='be rake'
 alias cons='c;be rails console'
-alias z='zeus'
-alias zrake='zeus rake'
-alias zc='zeus console'
-alias zs='zeus server'
 
 
 # Typo fixes. If I had a dollar...
