@@ -12,3 +12,6 @@ A script is included to automatically symlink configuration files for vim and ba
 git clone https://github.com/andrewberls/dotfiles.git
 bash dotfiles/setup.sh
 ```
+
+You will need to reload your shell after running the script - you can either restart your session or run
+`. ~/.bashrc`
