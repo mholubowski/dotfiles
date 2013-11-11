@@ -68,8 +68,12 @@ magenta=$'\e[1;35m'
 green='\e[0;32m'
 normal=$'\e[m'
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
-#PS1="$green\]\u:\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
+
+# Green local prompt
 PS1="$green\]\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
+
+# Cyan remote prompt
+# PS1="$cyan\"\w/\[$magenta\]\$git_branch\]\[$normal\] $ ""
 
 
 # Load RVM into a shell session *as a function*
@@ -79,8 +83,6 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
 elif [[ -s "/usr/local/rvm/scripts/rvm" ]] ; then
   # Then try to load from a root install
   source "/usr/local/rvm/scripts/rvm"
-else
-  printf "ERROR: An RVM installation was not found.\n"
 fi
 
 
