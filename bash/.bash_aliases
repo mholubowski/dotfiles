@@ -9,6 +9,16 @@ function ff {
   find . | grep "$@"
 }
 
+# 'Find directory'. Shows matching directories contained in current directory.
+# Ex: ffdir javascripts
+# => app/assets/javascripts
+# => vendor/assets/javascripts
+#
+# The grep is totally unecessary, but adds sweet highlighting
+function ffdir {
+  find . -type d -name "$1*" | grep "$@"
+}
+
 # 'Find process'. Doesn't show grep itself.
 # Ex: fps redis
 function fps() {
