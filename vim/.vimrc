@@ -29,6 +29,9 @@ highlight LineNr ctermfg=darkgrey ctermbg=NONE " Dark grey line numbers
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" :W as an alias for :w (argh)
+map :W <Esc>:w
+
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
@@ -49,6 +52,10 @@ map  <C-h> :tabp<CR>
 " coloc /nocoloc to toggle color column
 map :coloc :set colorcolumn=80<CR>
 map :nocoloc :set colorcolumn=<CR>
+
+" pa /nopa to toggle paste
+map :pa :set paste<CR>
+map :nopa :set nopaste<CR>
 
 " :t as an abbreviation for :tabnew
 ca t tabnew
@@ -98,3 +105,7 @@ set splitright
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>"
+
+" Enable indentation with tab and shift-tab in visual mode
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
