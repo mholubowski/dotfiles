@@ -71,6 +71,9 @@ cnoreabbrev Ack Ack! -Q
 " :tabue to align by equal signs
 cnoreabbrev tabue Tabularize /=
 
+" :tabub to align by {
+cnoreabbrev tabub Tabularize /{
+
 " Open symbol in a new tab with ctrl-\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
