@@ -112,13 +112,18 @@ function <SID>OpenSpecial(ochar,cchar) " ---{{{2
     let line = getline('.')
     let col = col('.') - 2
     "echom string(col).':'.line[:(col)].'|'.line[(col+1):]
-    if a:ochar == line[(col)] && a:cchar == line[(col+1)] "&& strlen(line) - (col) == 2
-        "echom string(s:closeStack)
-        while len(s:closeStack) > 0
-            call remove(s:closeStack, 0)
-        endwhile
-        return "\<esc>a\<CR>;\<CR>".a:cchar."\<esc>\"_xk$\"_xa"
-    endif
+
+    " TODO FINDME: This appears to be responsible for the {{}} newline
+    " stuff, disabling for now
+    "
+    "if a:ochar == line[(col)] && a:cchar == line[(col+1)] "&& strlen(line) - (col) == 2
+    "    "echom string(s:closeStack)
+    "    while len(s:closeStack) > 0
+    "        call remove(s:closeStack, 0)
+    "    endwhile
+    "    return "\<esc>a\<CR>;\<CR>".a:cchar."\<esc>\"_xk$\"_xa"
+    "endif
+
     return a:ochar.<SID>CloseStackPush(a:cchar)
 endfunction
 
