@@ -30,8 +30,10 @@ highlight LineNr ctermfg=darkgrey ctermbg=NONE " Dark grey line numbers
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" :W as an alias for :w (argh)
+" Alises for typo fixes. Argh.
 map :W <Esc>:w
+map :X <Esc>:x
+map K <Esc>k
 
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
