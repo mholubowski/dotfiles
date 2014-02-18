@@ -4,20 +4,21 @@ execute pathogen#infect()
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 
-:set nocompatible " Disable vi compatability
-:set expandtab    " Spaces to tabs
-:set tabstop=2    " Number of  spaces per tab
-:set shiftwidth=2 " Number of spaces for indentation
-:set number       " Enable line numbers
-:set ruler        " Show row and column at bottom right
-:set incsearch    " Incremental searches
-:set ignorecase   " Ignore cases in searches
-:set smartcase    " Case sensitive only if pattern includes uppercase letter
-:set autoindent   " Auto-indent new lines
-:set smartindent  " Auto-indent at beginning of lines
-:set smarttab     " Get backspaces to work with tab-spaces
-:set mouse=a
+:set nocompatible   " Disable vi compatability
+:set expandtab      " Spaces to tabs
+:set tabstop=2      " Number of spaces per tab
+:set shiftwidth=2   " Number of spaces for indentation
+:set relativenumber " Enable line numbers
+:set number         " Enable line numbers
+:set ruler          " Show row and column at bottom right
+:set incsearch      " Incremental searches
+:set ignorecase     " Ignore cases in searches
+:set smartcase      " Case sensitive only if pattern includes uppercase letter
+:set autoindent     " Auto-indent new lines
+:set smartindent    " Auto-indent at beginning of lines
+:set smarttab       " Get backspaces to work with tab-spaces
 :set backspace=indent,eol,start
+:set mouse=a        " Enable mouse mode by default
 
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -49,11 +50,11 @@ map :nf <Esc>:NERDTreeFind<CR>
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 
-" coloc /nocoloc to toggle color column
+" coloc/nocoloc to toggle color column
 map :coloc :set colorcolumn=80<CR>
 map :nocoloc :set colorcolumn=<CR>
 
-" pa /nopa to toggle paste
+" pa/nopa to toggle paste
 map :pa :set paste<CR>
 map :nopa :set nopaste<CR>
 
