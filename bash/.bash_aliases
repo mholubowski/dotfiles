@@ -6,7 +6,7 @@ export GREP_OPTIONS='-i --color=always'
 # => public/javascripts/shared.js
 # => etc...
 function ff {
-  find . | grep "$@"
+  mdfind $1 | grep $1
 }
 
 # 'Find directory'. Shows matching directories contained in current directory.
@@ -49,12 +49,6 @@ function linecount {
   fi
 
   find $dir -type f | xargs cat | wc -l
-}
-
-# Restart pow
-function pow_restart {
-  echo "Restarting Pow..."
-  touch ~/.pow/restart.txt
 }
 
 # Shortcut for opening a file with TextEdit
@@ -155,6 +149,7 @@ alias xx='exit'
 alias ':x'='x'
 alias cmake='c; make'
 alias ccmake='c; make clean; make'
+alias mc='make clean'
 
 alias up='cd ../'
 alias up.='up'
@@ -176,3 +171,4 @@ alias clera='clear'
 alias qcs='cs'
 alias xit='exit'
 alias rpsec='rspec'
+alias im='vim'
