@@ -1,5 +1,7 @@
 These are the configuration files and plugins that I use for vim, and tend to carry around between machines.
 
+![](https://dl.dropboxusercontent.com/u/7949088/dotfiles/vim.png)
+
 ## Plugins
 Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?script_id=2332).
 
