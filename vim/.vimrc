@@ -38,6 +38,9 @@ map K <Esc>k
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
+" :nc as a shortcut for closing NERDTree
+map :nc <Esc>:NERDTreeClose<CR>
+
 " :nf as a shortcut for revealing current file in NERDTree
 map :nf <Esc>:NERDTreeFind<CR>
 
