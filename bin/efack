@@ -38,8 +38,7 @@ hist_lines =
 
 ack_cmd = hist_lines.reverse.find { |line| line.split.first == 'ack' }
 
-# TODO: not splitting right
-files = `#{ack_cmd}`.split(/\d+:\w+/)
+files = `#{ack_cmd}`.split(/\d+:\w+|\n/)
                     .map { |f| f.strip.split(':').first }
                     .reject { |f| f.nil? || f.empty? }
                     .uniq
