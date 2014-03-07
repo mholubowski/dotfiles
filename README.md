@@ -42,3 +42,45 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Vim/Ruby configuration
 * [vim-powerline](https://github.com/Lokaltog/vim-powerline) - Pretty status line
 * [zencoding-vim](https://github.com/mattn/zencoding-vim) - HTML snippet expansion
+
+
+### Executables
+
+The [bin](http://github.com/andrewberls/dotfiles/tree/master/bin) directory contains a number
+of useful executables.
+
+#### ef - 'edit file'
+
+Edits a file in vim from a list of modified files in git.
+
+Consider the following output from `git status` (numbers added):
+
+```
+$ git status
+Changes not staged for commit:
+
+1) modified:   app/models/follow.rb
+2) modified:   config/sunspot.yml
+```
+
+`ef 1` will open `app/models/follow.rb` in vim, and `ef 2` will open `config/sunspot.yml`.
+If no number is given, the first file will be opened by default.
+
+#### efack - 'edit file from ack'
+
+Similar to `ef` - opens files in vim, except based on [ack](http://beyondgrep.com/) output instead of git.
+
+Example ack session and usage:
+
+```
+$ ack TODO
+app/assets/javascripts/fileone.js
+10: TODO: fix this
+
+app/assets/stylesheets/filetwo.css
+22: TODO: this could be better
+```
+
+Running `efack 1` will open `app/assets/javascripts/fileone.js` in vim, while
+`efack 2` will open `app/assets/stylesheets/filetwo.css`.
+If a file number is not specified, the first result file will be edited by default.

@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+# efack - 'Edit file for ack'
+# Edit a file in vim based on recent ack output
+#
+# Example ack session and usage:
+#
+#   $ ack TODO
+#   app/assets/javascripts/fileone.js
+#   10: TODO: fix this
+#
+#   app/assets/stylesheets/filetwo.css
+#   22: TODO: this could be better
+#
+#
+#   $ efack 1   -> open app/assets/javascripts/fileone.js in vim
+#   $ efack 2   -> open app/assets/stylesheets/filetwo.css in vim
+#
+# If a file number is not specified, the first result file will be
+# edited by default.
+
+
+idx = Integer(ARGV[0] || 1)
+
+# Reverse-search the history for the last ack command,
+# re-run it, parse the output, and execute vim with the correct file
+# lolprogramming
+hist_lines = File.readlines(Dir.home+'/.zsh_history')
+                 .map { |line| line.chomp.split(';')[1] }
+                 .reverse
+
+ack_cmd = hist_lines.find { |line| line.split.first == 'ack' }
+
+files = `#{ack_cmd}`.split(/\d+:\w+/)
+                    .map { |f| f.strip.split(':').first }
+                    .reject { |f| f.nil? || f.empty? }
+                    .uniq
+
+selected = files[idx-1] # 1-based arg -> 0-based idx
+
+if selected.nil?
+  puts "efack: Error - no file selected"
+  exit 1
+end
+
+exec "vim #{selected}"

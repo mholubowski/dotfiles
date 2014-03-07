@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # ef - 'Edit file'
-# Edits a file from a list of modified files in git
+# Edits a file in vim selected from a list of modified files in git
 # Ex: given a status such as:
 #
 # Changes not staged for commit:
