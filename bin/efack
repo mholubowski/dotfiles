@@ -25,12 +25,20 @@ idx = Integer(ARGV[0] || 1)
 # Reverse-search the history for the last ack command,
 # re-run it, parse the output, and execute vim with the correct file
 # lolprogramming
-hist_lines = File.readlines(Dir.home+'/.zsh_history')
-                 .map { |line| line.chomp.split(';')[1] }
-                 .reverse
 
-ack_cmd = hist_lines.find { |line| line.split.first == 'ack' }
+zsh_history  = Dir.home+'/.zsh_history'
+bash_history = Dir.home+'/.bash_history'
 
+hist_lines =
+  if File.exist?(zsh_history)
+    File.readlines(zsh_history).map { |line| line.chomp.split(';')[1] }
+   else
+    File.readlines(bash_history).map { |line| line.chomp }
+   end
+
+ack_cmd = hist_lines.reverse.find { |line| line.split.first == 'ack' }
+
+# TODO: not splitting right
 files = `#{ack_cmd}`.split(/\d+:\w+/)
                     .map { |f| f.strip.split(':').first }
                     .reject { |f| f.nil? || f.empty? }
