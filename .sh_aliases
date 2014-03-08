@@ -1,12 +1,10 @@
-export GREP_OPTIONS='-i --color=always'
-
 # 'Find file'. Shows matching files paths within the current directory
 # Ex: ff shared.js
 # => app/assets/javascripts/shared.js
 # => public/javascripts/shared.js
 # => etc...
 function ff {
-  mdfind $1 | grep $1
+  mdfind -onlyin . $1 | grep $1
 }
 
 # 'Find directory'. Shows matching directories contained in current directory.
@@ -29,12 +27,6 @@ function fps() {
 # Ex: dirsize app/ => 25M
 function dirsize {
   du -skh $1
-}
-
-# File count of the current directory
-# Ex: filecount => 150
-function filecount {
-  ls -R | wc -l
 }
 
 # Linecount of files in the given directory (defaults to current directory)
