@@ -31,10 +31,12 @@ bash_history = Dir.home+'/.bash_history'
 
 hist_lines =
   if File.exist?(zsh_history)
-    File.readlines(zsh_history).map { |line| line.chomp.split(';')[1] }
-   else
+    File.readlines(zsh_history).map do |line|
+      line.force_encoding('iso-8859-1').chomp.split(';')[1]
+    end
+  else
     File.readlines(bash_history).map { |line| line.chomp }
-   end
+  end
 
 ack_cmd = hist_lines.reverse.find { |line| line.split.first == 'ack' }
 
