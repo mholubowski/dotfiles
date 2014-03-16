@@ -35,6 +35,9 @@ map :W <Esc>:w
 map :X <Esc>:x
 map K <Esc>k
 
+" jk in insert mode as shortcut for Escape
+inoremap jk <Esc>
+
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
