@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+branch = ARGV[0] || branch = `git rev-parse --abbrev-ref HEAD`.strip
+
+`git fetch; git rebase origin/#{branch}`
