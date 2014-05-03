@@ -18,7 +18,14 @@ filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 :set smartindent    " Auto-indent at beginning of lines
 :set smarttab       " Get backspaces to work with tab-spaces
 :set backspace=indent,eol,start
-:set mouse=a        " Enable mouse mode by default
+:set mouse=a           " Enable mouse mode by default
+:set foldmethod=indent " Define folds based on code indentation
+set nofoldenable       " Don't fold by default
+set foldlevel=1
+
+" Map \f to enable folds, \nf to disable
+nnoremap <Leader>f :set foldenable<CR>
+nnoremap <Leader>nf :set nofoldenable<CR>
 
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -121,3 +128,10 @@ nnoremap <Leader>l :call RunLastSpec()<CR>"
 " Enable indentation with tab and shift-tab in visual mode
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+
+" Configure vim-indent-guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1

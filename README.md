@@ -37,6 +37,7 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * [vim-endwise](https://github.com/tpope/vim-endwise) - add 'end' automatically for Ruby blocks
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration
 * [vim-haml](https://github.com/tpope/vim-haml) - Highlighting for Haml
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) - Indent guides, useful for big chunks of HTML
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) - multiple cursors, a la Sublime Text
 * [vim-rspec](https://github.com/thoughtbot/vim-rspec) - Run rspec specs from within Vim
 * [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Vim/Ruby configuration
