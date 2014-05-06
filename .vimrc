@@ -113,7 +113,7 @@ map :mouseon :set mouse=a<CR>
 map :mouseoff :set mouse=<CR>
 
 " Alias :cc and :cu to \cc and \cu respsectively
-map :cc <Leader>cc
+map :cc <Leader>cb
 map :cu <Leader>cu
 
 " Open new split panes to right and bottom
