@@ -1,3 +1,17 @@
+# Ack aliases
+#
+# Command aliased to use literal search by default
+#   ack - literal search
+#   acki - case-insensitive search
+#   ackr - regex search
+#
+function ack {
+ ~/bin/ack -Q "$@"
+}
+alias acki='ack -i'         # Case-insensitive search
+alias ackr="command ack $@" # Regex search, undoing default -Q alias
+
+
 # 'Find file'. Shows matching files paths within the current directory
 # Ex: ff shared.js
 # => app/assets/javascripts/shared.js
