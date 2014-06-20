@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# Format a long-form commit message in a manner suitable for
+# a pull request, trimming off metadata and leading whitespace, etc
+#
+# Usage:
+#   git format-commit       # Displays message for HEAD
+#   git format-commit <sha> # Display message for commit at <sha>
+
+sha = ARGV[0] || 'HEAD'
+puts `git log --format=%B -n 1 #{sha}`.chomp
