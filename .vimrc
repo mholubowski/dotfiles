@@ -23,6 +23,10 @@ filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 set nofoldenable       " Don't fold by default
 set foldlevel=1
 
+" Disable bells
+set visualbell
+set t_vb=
+
 " Map \f to enable folds, \nf to disable
 nnoremap <Leader>f :set foldenable<CR>
 nnoremap <Leader>nf :set nofoldenable<CR>
