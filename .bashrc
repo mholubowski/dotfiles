@@ -72,13 +72,13 @@ normal=$'\e[m'
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 
 # Green local prompt
-PS1="$green\]\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
+# PS1="$green\]\w/\[$magenta\]\$git_branch\]\[$normal\] $ "
 
 # Cyan remote prompt
-# PS1="$cyan\w/\[$magenta\]\$git_branch\[$normal\] $ "
+PS1="$cyan\w/\[$magenta\]\$git_branch\[$normal\] $ "
 
 # Enable rbenv shims and autocompletion
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # Load up autojump
 [[ -f ~/.autojump/etc/profile.d/autojump.bash ]] && source ~/.autojump/etc/profile.d/autojump.bash
