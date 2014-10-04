@@ -10,7 +10,9 @@ cd dotfiles && bash setup.sh
 ```
 
 You will need to reload your shell after running the script - you can either restart your session or run
-`. ~/.bashrc`
+`. ~/.bashrc`.
+
+Note: the setup script creates symlinks into the dotfiles repo you cloned - don't delete it when you're done!
 
 
 ## Vim
