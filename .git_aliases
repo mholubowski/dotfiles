@@ -69,3 +69,5 @@ function glo {
 
 alias glgg='git log --graph --decorate'
 alias glg='git log --graph --decorate --oneline'
+
+alias gap='git add --patch'
