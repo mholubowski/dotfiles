@@ -1,20 +1,11 @@
+# Note: this script WILL override any existing files in your home directory
+
 dir=`pwd`
 
 if [[ $dir = $HOME ]]; then
   echo "ERR: setup needs to be run from within the dotfiles directory, exiting ..."
   exit 1
 fi
-
-
-read -p "Note: this script WILL override any existing files in your home directory. Continue? [y/n]:" -r
-
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  echo "Setup aborted."
-  exit 1
-else
-  echo "Proceeding with setup..."
-fi
-
 
 files=(
   ".vimrc"
