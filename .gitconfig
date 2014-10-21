@@ -5,7 +5,6 @@
 [alias]
 	aliases = config --get-regexp alias
 	unstage = reset --
-	cv = commit -v
 [core]
 	autocrlf = input
 	editor = vim
