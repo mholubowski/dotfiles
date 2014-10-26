@@ -1,76 +1,17 @@
-# Ack aliases
-#
-# Command aliased to use literal search by default
+# Ack aliased to use literal search by default
 #   ack - literal search
 #   acki - case-insensitive search
 #   ackr - regex search
-#
 function ack {
  ~/bin/ack -Q "$@"
 }
 alias acki='ack -i'         # Case-insensitive search
 alias ackr="command ack $@" # Regex search, undoing default -Q alias
 
-
-# 'Find file'. Shows matching files paths within the current directory
-# Ex: ff shared.js
-# => app/assets/javascripts/shared.js
-# => public/javascripts/shared.js
-# => etc...
-function ff {
-  mdfind -onlyin . $1 | grep $1
-}
-
-# 'Find directory'. Shows matching directories contained in current directory.
-# Ex: ffdir javascripts
-# => app/assets/javascripts
-# => vendor/assets/javascripts
-#
-# The grep is totally unecessary, but adds sweet highlighting
-function ffdir {
-  find . -type d -name "$1*" | grep "$@"
-}
-
 # 'Find process'. Doesn't show grep itself.
 # Ex: fps redis
 function fps() {
   ps aux | grep -v grep | grep $1
-}
-
-# Print size of the given directory
-# Ex: dirsize app/ => 25M
-function dirsize {
-  du -skh $1
-}
-
-# Linecount of files in the given directory (defaults to current directory)
-# Ex: linecount app/ => 2000
-# Ex: linecount
-function linecount {
-  if [[ -n "$1" ]]
-  then
-    dir="$1"
-  else
-    dir=`pwd`
-  fi
-
-  find $dir -type f | xargs cat | wc -l
-}
-
-# Shortcut for opening a file with TextEdit
-# Ex: te file.txt
-function te {
-  open -t $1
-}
-
-# Open Dropbox in a finder window
-# Exit the terminal unless run with -k
-function db {
-  open ~/Dropbox
-  if [[ "$1" != '-k' ]]
-  then
-    exit
-  fi
 }
 
 # Open a directory in a finder window (defaults to current directory)
@@ -120,28 +61,6 @@ function rc {
   fi
 }
 
-# Open specified directory in Sublime for editing, or default to .
-# Ex: e project/
-# Ex: e
-function e {
-  if [[ -n "$1" ]]
-  then
-    subl -n "$1"
-  else
-    subl -n .
-  fi
-}
-
-# Open a url in a web browser, because sometimes opening a browser is too much work
-# Ex: web github.com/rails/rails
-function web {
-  if [[ -n "$1" ]]
-  then
-    open "http://www.$1"
-  else
-    open "http://www.google.com"
-  fi
-}
 
 # Misc aliases
 # ---------------------
