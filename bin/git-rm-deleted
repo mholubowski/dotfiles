@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Stage all deleted files in git
+
+git rm $(git ls-files --deleted)
