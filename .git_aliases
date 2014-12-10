@@ -5,7 +5,7 @@ function cs {
   clear
   if ! git ls-files >& /dev/null
   then
-    ls -la
+    ls -lah
   else
     git status
   fi
