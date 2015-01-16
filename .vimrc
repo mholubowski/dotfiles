@@ -23,19 +23,35 @@ filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 set nofoldenable       " Don't fold by default
 set foldlevel=1
 
+" Map leader to ,
+let mapleader = ","
+let g:mapleader = ","
+
+" Leader key timeout
+set tm=2000
+
+" Allow the normal use of , by pressing it twice
+noremap ,, ,
+
 " Disable bells
 set visualbell
 set t_vb=
 
-" Map \f to enable folds, \nf to disable
+" Kill the damned Ex mode.
+nnoremap Q <nop>
+
+" Map Leader-f to enable folds, Leader-nf to disable
 nnoremap <Leader>f :set foldenable<CR>
 nnoremap <Leader>nf :set nofoldenable<CR>
 
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-"highlight clear SignColumn " Remove background highlighting for gutter
-highlight LineNr ctermfg=darkgrey ctermbg=NONE " Dark grey line numbers
+" Remove background highlighting for gutter
+"highlight clear SignColumn
+
+" Dark grey line numbers
+highlight LineNr ctermfg=darkgrey ctermbg=NONE
 
 " Start CtrlP with ctrl-p
 let g:ctrlp_map = '<c-p>'
@@ -52,11 +68,11 @@ inoremap jk <Esc>
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
-" :nc as a shortcut for closing NERDTree
-map :nc <Esc>:NERDTreeClose<CR>
-
 " :nf as a shortcut for revealing current file in NERDTree
 map :nf <Esc>:NERDTreeFind<CR>
+
+" :nc as a shortcut for closing NERDTree
+map :nc <Esc>:NERDTreeClose<CR>
 
 " Close NERDTree if it is the last and only buffer
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -84,7 +100,7 @@ ca t tabnew
 ca tabu Tabularize
 
 " :ack as an alias for :Ack! -Q
-" Avoids opening first match in buffer, and escapes literal strings
+" (Avoids opening first match in buffer, and escapes literal strings)
 cnoreabbrev ack Ack! -Q
 cnoreabbrev Ack Ack! -Q
 
@@ -116,18 +132,13 @@ map :s2d :s/'/"/g<CR>
 map :mouseon :set mouse=a<CR>
 map :mouseoff :set mouse=<CR>
 
-" Alias :cc and :cu to \cc and \cu respsectively
+" Alias :cc and :cu to Leader-cc (comment) and Leader-cu (uncomment)
 map :cc <Leader>cb
 map :cu <Leader>cu
 
 " Open new split panes to right and bottom
 set splitbelow
 set splitright
-
-" vim-rspec mappings
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>"
 
 " Enable indentation with tab and shift-tab in visual mode
 vnoremap <Tab> >gv
@@ -139,3 +150,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
+
+" vim-rspec mappings
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>"
