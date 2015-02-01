@@ -89,6 +89,9 @@ map  <C-h> :tabp<CR>
 map :coloc :set colorcolumn=80<CR>
 map :nocoloc :set colorcolumn=<CR>
 
+" mks to save session file
+map :mks :mksession! s.vim<CR>
+
 " pa/nopa to toggle paste
 map :pa :set paste<CR>
 map :nopa :set nopaste<CR>
