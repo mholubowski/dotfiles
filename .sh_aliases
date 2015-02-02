@@ -75,6 +75,7 @@ alias ':x'='x'
 alias cmake='c; make'
 alias ccmake='c; make clean; make'
 alias mc='make clean'
+alias vims='vim -S s.vim'
 
 alias up='cd ../'
 alias up.='up'
