@@ -61,6 +61,11 @@ function rc {
   fi
 }
 
+# Print the fully qualified path to a file
+function realpath () {
+  readlink -e $1
+}
+
 
 # Misc aliases
 # ---------------------
