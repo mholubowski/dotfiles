@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+# Convert a CSV to a file containing each row
+# as a line of JSON
+#
+# Usage: csvtojson input-csv-filename output-filename
+
+require 'json'
+
+in_filename = ARGV[0] or raise "Need input filename"
+out_filename = ARGV[1] or raise "Need output filename"
+outfile = File.open(out_filename, "w")
+
+$cols = []
+
+def parse_val(val)
+  case
+  when val =~ /^\d+$/ then val.to_i
+  when val =~ /^\d*\.?\d*$/ then val.to_f
+  else val
+  end
+end
+
+def fields_for(line)
+  line.chomp.split(',').map do |s|
+    val = (s == 'NULL') ? nil : s.gsub('"', '')
+    parse_val(val)
+  end
+end
+
+File.readlines(in_filename).each_with_index do |line, idx|
+  if idx == 0
+    $cols = fields_for(line)
+  else
+    json_line = JSON.dump(Hash[$cols.zip(fields_for(line))])
+    outfile.write(json_line + "\n")
+  end
+end
