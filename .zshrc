@@ -37,13 +37,14 @@ setopt ignore_eof
 # Can force clobber with >!, e.g. `cat fileone >! filetwo`
 setopt no_clobber
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:$HOME/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:$HOME/.rbenv/bin
 # export PATH=$PATH:/usr/local/mysql/bin
 # export PATH=$PATH:/usr/local/play-2.2.1
 export PATH=$PATH:/usr/local/cassandra-2.0.4/bin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
