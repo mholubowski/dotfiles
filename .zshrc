@@ -85,10 +85,6 @@ if [ -f ~/.sh_aliases ]; then
     source ~/.sh_aliases
 fi
 
-if [ -f ~/.git_aliases ]; then
-    source ~/.git_aliases
-fi
-
 # Private aliases, can't touch this
 if [ -f ~/.private_aliases ]; then
   source ~/.private_aliases
