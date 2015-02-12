@@ -1,11 +1,10 @@
-# Path to your oh-my-zsh configuration.
+DISABLE_AUTO_UPDATE="true"
 ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Use the zsh completion system
 autoload -U compinit
 compinit
-
 
 # Set up history
 #   - Don't share history between terminals
