@@ -96,3 +96,6 @@ fi
 if [ -f ~/.private_aliases ]; then
   . ~/.private_aliases
 fi
+
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
