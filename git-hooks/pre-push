@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Pre-push hook to prevent pushes to master branch
+
+pushed_branch=`git rev-parse --abbrev-ref HEAD`
+
+if [[ "$pushed_branch" == "master" ]]
+then
+  echo "[Notice] Pre-push hook preventing push to master. Create a feature branch instead."
+  exit 1
