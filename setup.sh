@@ -29,8 +29,6 @@ do
 done
 
 ln -sf "$dir/bin" "$HOME/bin"
-chmod a+x ~/bin/*
-
-echo "export PATH=$PATH:$HOME/bin" >> ~/.bashrc
+chmod a+x "$HOME/bin/*"
 
 echo "Setup complete; reload your terminal to changes to take effect."
