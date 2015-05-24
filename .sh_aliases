@@ -119,6 +119,10 @@ function cs {
   fi
 }
 
+function csf {
+  cs | fpp
+}
+
 # Show diff of last commit
 function glc {
    sha=`git rev-parse --short HEAD`
@@ -179,3 +183,4 @@ alias glgg='git log --graph --decorate'
 alias glg='git log --graph --decorate --oneline'
 
 alias gap='git add --patch'
+alias gpm='git pull origin master'
