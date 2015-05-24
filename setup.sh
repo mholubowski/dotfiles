@@ -29,6 +29,6 @@ do
 done
 
 ln -sf "$dir/bin" "$HOME/bin"
-chmod a+x "$HOME/bin/*"
+chmod a+x $HOME/bin/*
 
 echo "Setup complete; reload your terminal to changes to take effect."
