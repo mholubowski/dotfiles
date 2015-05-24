@@ -67,8 +67,6 @@ function realpath () {
 }
 
 
-# Misc aliases
-# ---------------------
 alias c='clear'
 alias ls='ls -F'
 alias lsa='c; ls -lah'
@@ -95,13 +93,13 @@ alias be='bundle exec'
 alias rake='be rake'
 alias cons='c;be rails console'
 
-
 # Typo fixes. If I had a dollar...
 # ---------------------
 alias clera='clear'
 alias qcs='cs'
 alias xit='exit'
 alias rpsec='rspec'
+alias vi='vim'
 alias im='vim'
 
 # Git stuff
