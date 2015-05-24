@@ -37,18 +37,8 @@ setopt ignore_eof
 # Can force clobber with >!, e.g. `cat fileone >! filetwo`
 setopt no_clobber
 
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.rbenv/bin
-# export PATH=$PATH:/usr/local/mysql/bin
-# export PATH=$PATH:/usr/local/play-2.2.1
-export PATH=$PATH:/usr/local/cassandra-2.0.4/bin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
-
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
 
 # Set the prompt with the following format:
 #   ~/Documents $
@@ -73,12 +63,18 @@ function precmd() {
 #   export PROMPT="%{$FG[051]%}%n %~%{$FG[013]%}$(parse_git_branch)%{$NORMAL%} $ "
 # }
 
-
 # Enable rbenv shims and autocompletion
 eval "$(rbenv init -)"
 
-# Load up autojump
+# Load up autojump (if present)
 [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.rbenv/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Load aliases
 if [ -f ~/.sh_aliases ]; then

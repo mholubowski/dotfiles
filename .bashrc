@@ -77,19 +77,16 @@ PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 # Cyan remote prompt
 PS1="$cyan\w/\[$magenta\]\$git_branch\[$normal\] $ "
 
-# Enable rbenv shims and autocompletion
-# eval "$(rbenv init -)"
-
-# Load up autojump
+# Load up autojump (if present)
 [[ -f ~/.autojump/etc/profile.d/autojump.bash ]] && source ~/.autojump/etc/profile.d/autojump.bash
+
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$PATH:$HOME/bin
 
 # Load aliases
 if [ -f ~/.sh_aliases ]; then
     . ~/.sh_aliases
-fi
-
-if [ -f ~/.git_aliases ]; then
-    . ~/.git_aliases
 fi
 
 # Private aliases, can't touch this
@@ -97,5 +94,3 @@ if [ -f ~/.private_aliases ]; then
   . ~/.private_aliases
 fi
 
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
