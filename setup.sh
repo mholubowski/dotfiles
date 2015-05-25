@@ -31,4 +31,6 @@ done
 ln -sf "$dir/bin" "$HOME/bin"
 chmod a+x $HOME/bin/*
 
+chown -R vagrant:vagrant ./* ./.*
+
 echo "Setup complete; reload your terminal to changes to take effect."
