@@ -2,10 +2,12 @@
 # vi: set ft=ruby :
 
 $PROVISION = <<SCRIPT
+VHOME=/home/vagrant
+
 sudo apt-get update -y
 sudo apt-get install -y vim git
-cd /home/vagrant && git clone https://github.com/andrewberls/dotfiles.git
-cd /home/vagrant/dotfiles && HOME=/home/vagrant sudo bash setup.sh
+cd $VHOME && git clone https://github.com/andrewberls/dotfiles.git
+cd $VHOME/dotfiles && HOME=$VHOME sudo bash setup.sh
 SCRIPT
 
 VAGRANTFILE_API_VERSION = "2"
