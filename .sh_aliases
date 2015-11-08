@@ -177,8 +177,10 @@ function glo {
   fi
 }
 
-alias glgg='git log --graph --decorate'
-alias glg='git log --graph --decorate --oneline'
-
 alias gap='git add --patch'
 alias gpm='git pull origin master'
+
+function conflict () {
+  ack ">>>"
+  ack "<<<"
+}
