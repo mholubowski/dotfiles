@@ -57,6 +57,8 @@ highlight LineNr ctermfg=darkgrey ctermbg=NONE
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+set wildignore+=*.a*,*.hi*,*.o*
+
 " Alises for typo fixes. Argh.
 map :W <Esc>:w
 map :X <Esc>:x
