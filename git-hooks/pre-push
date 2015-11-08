@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Pre-push hook to prevent pushes to master branch
+# Pre-push hook to prevent pushes to master branch.
 
 pushed_branch=`git rev-parse --abbrev-ref HEAD`
 
 if [[ "$pushed_branch" == "master" ]]
 then
-  echo "[Notice] Pre-push hook preventing push to master. Create a feature branch instead."
-  exit 1
+  if [ -z "$FORCE" ]; then
+    echo "A push to master was prevented - create a feature branch instead."
+    echo "If you are *absolutely certain* what you are doing, re-run with FORCE=1."
+    exit 1
+  fi
+fi
