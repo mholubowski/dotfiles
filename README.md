@@ -29,6 +29,8 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * [nerdcommenter](http://www.vim.org/scripts/script.php?script_id=1218) - commenting/uncommenting code blocks
 * [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) - File tree browser
 * [ragtag](http://www.vim.org/scripts/script.php?script_id=1896) - Mappings for HTML/erb,etc (enhances surround.vim)
+* [rainbow-parentheses](https://github.com/kien/rainbow_parentheses.vim) - Color matching parentheses
+* [rust.vim](https://github.com/rust-lang/rust.vim) - Bindings for the Rust language
 * [Tabular](https://github.com/godlygeek/tabular) - For aligning text
 * [surround.vim](http://www.vim.org/scripts/script.php?script_id=1697) - Quoting/parenthesizing made simple
 * [vim-coffeescript](https://github.com/kchmck/vim-coffee-script) - Highlighting for CoffeeScript
