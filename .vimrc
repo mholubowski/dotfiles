@@ -4,22 +4,22 @@ execute pathogen#infect()
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype plugins for lang-specific scripts
 
-:set nocompatible   " Disable vi compatability
-:set expandtab      " Spaces to tabs
-:set tabstop=2      " Number of spaces per tab
-:set shiftwidth=2   " Number of spaces for indentation
-:set relativenumber " Enable line numbers
-:set number         " Enable line numbers
-:set ruler          " Show row and column at bottom right
-:set incsearch      " Incremental searches
-:set ignorecase     " Ignore cases in searches
-:set smartcase      " Case sensitive only if pattern includes uppercase letter
-:set autoindent     " Auto-indent new lines
-:set smartindent    " Auto-indent at beginning of lines
-:set smarttab       " Get backspaces to work with tab-spaces
-:set backspace=indent,eol,start
-:set mouse=a           " Enable mouse mode by default
-:set foldmethod=indent " Define folds based on code indentation
+set nocompatible   " Disable vi compatability
+set expandtab      " Spaces to tabs
+set tabstop=2      " Number of spaces per tab
+set shiftwidth=2   " Number of spaces for indentation
+set relativenumber " Enable line numbers
+set number         " Enable line numbers
+set ruler          " Show row and column at bottom right
+set incsearch      " Incremental searches
+set ignorecase     " Ignore cases in searches
+set smartcase      " Case sensitive only if pattern includes uppercase letter
+set autoindent     " Auto-indent new lines
+set smartindent    " Auto-indent at beginning of lines
+set smarttab       " Get backspaces to work with tab-spaces
+set backspace=indent,eol,start
+set mouse=a           " Enable mouse mode by default
+set foldmethod=indent " Define folds based on code indentation
 set nofoldenable       " Don't fold by default
 set foldlevel=1
 
