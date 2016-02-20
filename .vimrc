@@ -47,9 +47,6 @@ nnoremap <Leader>nf :set nofoldenable<CR>
 " Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Remove background highlighting for gutter
-"highlight clear SignColumn
-
 " Dark grey line numbers
 highlight LineNr ctermfg=darkgrey ctermbg=NONE
 
@@ -57,7 +54,7 @@ highlight LineNr ctermfg=darkgrey ctermbg=NONE
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-set wildignore+=*.a*,*.hi*,*.o*
+set wildignore+=*target/*,*build/*,*tmp/*,*vendor/*,*gradle/*,*.pyc*,*.a*,*.hi*,*.o*
 
 " Alises for typo fixes. Argh.
 map :W <Esc>:w
