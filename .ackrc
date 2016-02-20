@@ -21,3 +21,8 @@
 --ignore-dir=generated
 --ignore-dir=asset-cache
 --ignore-dir=public/assets
+--ignore-dir=target
+--ignore-dir=repo
+--ignore-dir=resources/static/js-out
+--ignore-file=is:.lein-repl-history
+--ignore-file=is:gc.log
