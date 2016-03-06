@@ -66,22 +66,3 @@ Changes not staged for commit:
 
 `ef 1` will open `app/models/follow.rb` in vim, and `ef 2` will open `config/sunspot.yml`.
 If no number is given, the first file will be opened by default.
-
-#### efack - 'edit file from ack'
-
-Similar to `ef` - opens files in vim, except based on [ack](http://beyondgrep.com/) output instead of git.
-
-Example ack session and usage:
-
-```
-$ ack TODO
-app/assets/javascripts/fileone.js
-10: TODO: fix this
-
-app/assets/stylesheets/filetwo.css
-22: TODO: this could be better
-```
-
-Running `efack 1` will open `app/assets/javascripts/fileone.js` in vim, while
-`efack 2` will open `app/assets/stylesheets/filetwo.css`.
-If a file number is not specified, the first result file will be edited by default.
