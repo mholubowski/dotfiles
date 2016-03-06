@@ -64,6 +64,9 @@ map K <Esc>k
 " jk in insert mode as shortcut for Escape
 inoremap jk <Esc>
 
+" Show dotfiles in NERDTree
+let NERDTreeShowHidden=1
+
 " :nt as a shortcut for opening NERDTree
 map :nt <Esc>:NERDTree<CR>
 
