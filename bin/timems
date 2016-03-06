@@ -1,6 +1,0 @@
-#!/bin/bash
-
-START_T=`date +%s%N | cut -b1-13`
-eval $@
-END_T=`date +%s%N | cut -b1-13`
-echo -e "\nELAPSED: $((END_T-START_T)) ms"
