@@ -1,3 +1,4 @@
+# Set up dotfiles for a Vagrant user
 # Note: this script WILL override any existing files in your home directory
 
 dir=`pwd`

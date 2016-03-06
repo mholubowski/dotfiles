@@ -1,7 +1,5 @@
 [color]
 	ui = true
-[credential]
-	helper = osxkeychain
 [alias]
 	aliases = config --get-regexp alias
 	unstage = reset --

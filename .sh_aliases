@@ -66,6 +66,9 @@ function realpath () {
   readlink -e $1
 }
 
+function murder {
+  sudo killall -9 $1
+}
 
 alias c='clear'
 alias ls='ls -F'

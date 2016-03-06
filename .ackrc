@@ -26,3 +26,5 @@
 --ignore-dir=resources/static/js-out
 --ignore-file=is:.lein-repl-history
 --ignore-file=is:gc.log
+
+--ignore-dir=gradle

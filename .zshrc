@@ -18,8 +18,9 @@ setopt inc_append_history
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# Make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# Set PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:$HOME/bin
 
 # Ignore case and display colored output
 export GREP_OPTIONS='-i --color=auto'
@@ -51,10 +52,6 @@ NORMAL=$'\033[0m'
 
 # Green local prompt
 function precmd() {
-  # Non-bold git branch
-  #export PROMPT="%{$FG[034]%}%~/%{$FG[207]%}$(parse_git_branch)%{$NORMAL%} $ "
-
-  # Bold git branch (matches old)
   export PROMPT="%{$FG[034]%}%~/%{$FG[207]%}%B$(parse_git_branch)%b%{$NORMAL%} $ "
 }
 
@@ -63,18 +60,13 @@ function precmd() {
 #   export PROMPT="%{$FG[051]%}%n %~%{$FG[013]%}$(parse_git_branch)%{$NORMAL%} $ "
 # }
 
-# Enable rbenv shims and autocompletion
-eval "$(rbenv init -)"
+# Enable rbenv shims and autocompletion (if present)
+if type "rbenv" > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # Load up autojump (if present)
 [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.rbenv/bin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Load aliases
 if [ -f ~/.sh_aliases ]; then
