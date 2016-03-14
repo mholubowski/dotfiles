@@ -22,27 +22,27 @@ Note: the setup script creates symlinks into the dotfiles repo you cloned - don'
 ### Plugins
 Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?script_id=2332).
 
-* [ack.vim](https://github.com/mileszs/ack.vim) - code search (requires [Ack](http://beyondgrep.com/))
+* (yes) [ack.vim](https://github.com/mileszs/ack.vim) - code search (requires [Ack](http://beyondgrep.com/))
 * [AutoClose.vim](http://www.vim.org/scripts/script.php?script_id=1849) - Auto-complete braces, parens, etc
 * [BufOnly.vim](http://www.vim.org/scripts/script.php?script_id=1071) - Unload all buffers but current one
-* [CtrlP](https://github.com/kien/ctrlp.vim) - Fuzzy file search
-* [nerdcommenter](http://www.vim.org/scripts/script.php?script_id=1218) - commenting/uncommenting code blocks
-* [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) - File tree browser
+* (yes) [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy file search
+* (yes) [nerdcommenter](http://www.vim.org/scripts/script.php?script_id=1218) - commenting/uncommenting code blocks
+* (yes) [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) - File tree browser
 * [ragtag](http://www.vim.org/scripts/script.php?script_id=1896) - Mappings for HTML/erb,etc (enhances surround.vim)
-* [rainbow-parentheses](https://github.com/kien/rainbow_parentheses.vim) - Color matching parentheses
+* (yes) [rainbow-parentheses](https://github.com/kien/rainbow_parentheses.vim) - Color matching parentheses
 * [rust.vim](https://github.com/rust-lang/rust.vim) - Bindings for the Rust language
 * [Tabular](https://github.com/godlygeek/tabular) - For aligning text
 * [surround.vim](http://www.vim.org/scripts/script.php?script_id=1697) - Quoting/parenthesizing made simple
-* [vim-coffeescript](https://github.com/kchmck/vim-coffee-script) - Highlighting for CoffeeScript
-* [vim-endwise](https://github.com/tpope/vim-endwise) - add 'end' automatically for Ruby blocks
+* (yes) [vim-coffeescript](https://github.com/kchmck/vim-coffee-script) - Highlighting for CoffeeScript
+* (yes) [vim-endwise](https://github.com/tpope/vim-endwise) - add 'end' automatically for Ruby blocks
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration
 * [vim-haml](https://github.com/tpope/vim-haml) - Highlighting for Haml
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) - Indent guides, useful for big chunks of HTML
-* [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) - multiple cursors, a la Sublime Text
+* (yes) [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) - multiple cursors, a la Sublime Text
 * [vim-rspec](https://github.com/thoughtbot/vim-rspec) - Run rspec specs from within Vim
-* [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Vim/Ruby configuration
-* [vim-powerline](https://github.com/Lokaltog/vim-powerline) - Pretty status line
-* [zencoding-vim](https://github.com/mattn/zencoding-vim) - HTML snippet expansion
+* (yes) [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Vim/Ruby configuration
+* (yes) [vim-airline](https://github.com/vim-airline/vim-airline) - Pretty status line
+* (yes) [emmet-vim](https://github.com/mattn/emmet-vim) - HTML snippet expansion
 
 
 ### Executables
