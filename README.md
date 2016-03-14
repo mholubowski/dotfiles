@@ -50,6 +50,8 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * (yes) [vim-airline](https://github.com/vim-airline/vim-airline) - Pretty status line
 * (yes) [emmet-vim](https://github.com/mattn/emmet-vim) - HTML snippet expansion
 * (yes) [syntastic](http://vimawesome.com/plugin/syntastic) - syntax linting
+* (yes) [vim-javascript](https://github.com/pangloss/vim-javascript) - js syntax highlighting
+* (yes) [vim-jsx](https://github.com/mxw/vim-jsx) - jsx (React) syntax highlighting
 
 ### Executables
 
