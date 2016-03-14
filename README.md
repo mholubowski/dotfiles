@@ -49,7 +49,7 @@ Plugins are managed with [pathogen.vim](http://www.vim.org/scripts/script.php?sc
 * (yes) [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Vim/Ruby configuration
 * (yes) [vim-airline](https://github.com/vim-airline/vim-airline) - Pretty status line
 * (yes) [emmet-vim](https://github.com/mattn/emmet-vim) - HTML snippet expansion
-
+* (yes) [syntastic](http://vimawesome.com/plugin/syntastic) - syntax linting
 
 ### Executables
 
